@@ -42,7 +42,7 @@ export default async function handler(
     const swapRoute = new Route([pool], TOKENA, TOKENB);
     const result = await getQoute(swapRoute, TOKENA, wallet!, amount);
 
-    res.status(200).json(ethers.utils.formatUnits(result![0], 6));
+    res.status(200).json({ qoute: ethers.utils.formatUnits(result![0], 6) });
   } catch (error) {
     res.status(400).send("error: " + error);
   }

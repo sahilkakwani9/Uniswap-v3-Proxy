@@ -99,7 +99,7 @@ export default async function handler(
     };
     const result = await sendTransaction(tx, privateKey);
 
-    res.status(200).json("result");
+    res.status(200).json({ trade: "success" });
   } catch (error) {
     res.status(400).send("error: " + error);
   }
